@@ -1,0 +1,7 @@
+com\Test2\TestBase\Resources.class
+com\Test2\TestBase\Base.class
+com\Test2\Objects\CheckoutPage.class
+com\Test2\Utilities\RandomStringGeneration.class
+com\Test2\Objects\RegisterPage.class
+com\Test2\Objects\LoginPage.class
+com\Test2\Tests\GetTest.class

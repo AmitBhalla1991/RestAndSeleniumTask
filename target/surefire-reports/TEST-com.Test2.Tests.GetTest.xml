@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="6" failures="1" name="com.Test2.Tests.GetTest" time="154.256" errors="0" skipped="0">
+  <properties>
+    <property name="idea.version" value="2022.3"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="17.0.1+12-LTS-39"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\amit.bhalla\Desktop\RestAndSeleniumTest2"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\amit.bhalla\Desktop\RestAndSeleniumTest2"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="17.0.1+12-LTS-39"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\AMIT~1.BHA\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\amit.bhalla\AppData\Local\Programs\Python\Python310;C:\Users\amit.bhalla\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Users\amit.bhalla\AppData\Local\Android\Sdk\platforms;C:\Users\amit.bhalla\AppData\Local\Android\Sdk;C:\Users\amit.bhalla\AppData\Local\Android\Sdk\platform-tools;C:\Users\amit.bhalla\AppData\Local\Android\Sdk\build-tools;C:\Users\amit.bhalla\AppData\Local\Android\Sdk\platforms\android-33;C:\Users\amit.bhalla\AppData\Local\Android\Sdk\build-tools\33.0.0;C:\Users\amit.bhalla\Downloads\apache-maven-3.8.6-bin;C:\Users\amit.bhalla\Downloads\apache-maven-3.8.6-bin\apache-maven-3.8.6\bin;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Node.js;C:\Program Files\Git\cmd;C:\Users\amit.bhalla\AppData\Local\Microsoft\WindowsApps;C:\Users\amit.bhalla\AppData\Roaming\npm;C:\Users\amit.bhalla\.dotnet\tools;."/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\plugins\maven\lib\maven3/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\amit.bhalla"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="user.name" value="amit.bhalla"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2022.3 install"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17.0.1"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="17.0.1"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\plugins\maven\lib\maven3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2021-10-19"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="com.Test2.Tests.GetTest" name="TEST_01_Generate_Random_User" time="0.931"/>
+  <testcase classname="com.Test2.Tests.GetTest" name="TEST_O2_Response_Time" time="0"/>
+  <testcase classname="com.Test2.Tests.GetTest" name="TEST_O3_Register_User" time="8.419"/>
+  <testcase classname="com.Test2.Tests.GetTest" name="TEST_O4_Register__Duplicate_User" time="3.292"/>
+  <testcase classname="com.Test2.Tests.GetTest" name="TEST_O5_SignIn_And_Start_Shopping" time="14.773"/>
+  <testcase classname="com.Test2.Tests.GetTest" name="TEST_O6_Complete_Checkout" time="126.841">
+    <failure message="Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //main//div[@class=&apos;page-title-wrapper&apos;]//span[normalize-space()=&apos;Thank you for your purchase!&apos;]&apos; (tried for 10 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //main//div[@class=&apos;page-title-wrapper&apos;]//span[normalize-space()=&apos;Thank you for your purchase!&apos;]&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.Test2.Objects.CheckoutPage.orderStatus(CheckoutPage.java:126)
+	at com.Test2.Tests.GetTest.TEST_O6_Complete_Checkout(GetTest.java:186)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//main//div[@class=&apos;page-title-wrapper&apos;]//span[normalize-space()=&apos;Thank you for your purchase!&apos;]&quot;}
+  (Session info: chrome=108.0.5359.99)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ACLBLRFC1374&apos;, ip: &apos;192.168.1.4&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.99, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\AMIT~1.BHA\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:59402}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b854d17099db1e1004d8c85b0564cde2
+*** Element info: {Using=xpath, value=//main//div[@class=&apos;page-title-wrapper&apos;]//span[normalize-space()=&apos;Thank you for your purchase!&apos;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy19.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 39 more
+</failure>
+    <system-err>[main] INFO com.Test2.TestBase.Base - Test case 6 Starts
+[main] INFO com.Test2.TestBase.Base - User enter Company Details for placing order
+[main] INFO com.Test2.TestBase.Base - User enter street address for placing order
+[main] INFO com.Test2.TestBase.Base - User enter city for placing order
+[main] INFO com.Test2.TestBase.Base - User selects state&apos;&apos;province for placing order
+[main] INFO com.Test2.TestBase.Base - The Selected dropdown is :Alaska
+[main] INFO com.Test2.TestBase.Base - User enter postcode for placing order
+[main] INFO com.Test2.TestBase.Base - User enter phone Number for placing order
+[main] INFO com.Test2.TestBase.Base - User checked flat rate checkbox for placing order
+[main] INFO com.Test2.TestBase.Base - User clicked on NEXT Button for placing order
+[main] INFO com.Test2.TestBase.Base - User clicked on checkbox of billing-address-same-as-shipping for placing order
+[main] INFO com.Test2.TestBase.Base - User clicked on place order Button for placing order
+[main] INFO com.Test2.TestBase.Base - User checking status of Order
+</system-err>
+  </testcase>
+</testsuite>
