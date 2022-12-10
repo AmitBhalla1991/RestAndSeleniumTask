@@ -91,6 +91,8 @@ public class CheckoutPage extends Base {
 
     public void clickNextButton() {
         logger.info("User clicked on NEXT Button for placing order");
+        WebDriverWait wait=new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.visibilityOfAllElements(Next));
         Next.click();
 
     }
