@@ -12,7 +12,9 @@ import java.util.concurrent.TimeUnit;
 import com.Test2.Utilities.RandomStringGeneration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -45,18 +47,21 @@ public class Base {
     public static WebDriver driver;
     public static ChromeOptions chromeOptions;
 
+    public static DesiredCapabilities cap;
+
     protected static Logger logger = LoggerFactory.getLogger(Base.class.getName());
 
     Faker fake = new Faker();
 
 
-
-
-
     @BeforeTest
 
     public void initialization() {
+        cap = new DesiredCapabilities();
+        cap.setJavascriptEnabled(true);
         chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.merge(cap);
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();

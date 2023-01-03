@@ -23,6 +23,19 @@
       <version>5.0.0</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-chrome-driver</artifactId>
+      <version>4.1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-devtools-v108</artifactId>
+      <version>4.7.2</version>
+    </dependency>
+
+
     <!-- mockserver -->
     <dependency>
       <groupId>org.mock-server</groupId>
@@ -41,11 +54,7 @@
       <artifactId>selenium-java</artifactId>
       <version>3.141.59</version>
     </dependency>
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-chrome-driver</artifactId>
-      <version>2.50.0</version>
-    </dependency>
+
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -85,11 +94,7 @@
       <artifactId>jackson-dataformat-xml</artifactId>
       <version>2.9.0</version>
     </dependency>
-    <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.8.6</version>
-    </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
