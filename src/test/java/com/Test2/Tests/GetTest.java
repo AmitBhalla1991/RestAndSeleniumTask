@@ -45,7 +45,8 @@ public class GetTest extends Base {
         String Connection = response.header("Connection");
         Assert.assertEquals(Connection, "keep-alive");
 
-        jp = new JsonPath(responseBody).setRootPath("results");
+        jp = new JsonPath(responseBody);
+        jp.setRootPath("results");
 
         String firstName=jp.getString("name.first").replaceAll("\\[|\\]", "");
         logger.info("The First Name is : " + firstName);
@@ -87,11 +88,13 @@ public class GetTest extends Base {
 
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-        String firstName = response.jsonPath().getString("results[0].name.first").toString();
+        String firstName=jp.getString("name.first").replaceAll("\\[|\\]", "");
         logger.info("The First Name is : " + firstName);
-        String LastName = response.jsonPath().getString("results[0].name.last").toString();
+
+        String LastName = jp.getString("name.last").replaceAll("\\[|\\]", "");
         logger.info("The Last Name is : " + LastName);
-        String email = response.jsonPath().getString("results[0].email").toString();
+
+        String email = jp.getString("email").replaceAll("\\[|\\]", "");
         logger.info("The Email is : " + email);
 
         page = new RegisterPage(driver);
@@ -150,7 +153,7 @@ public class GetTest extends Base {
 
         data = new LoginPage(driver);
 
-        String email = response.jsonPath().getString("results[0].email").toString();
+        String email = jp.getString("email").replaceAll("\\[|\\]", "");
         logger.info("The Email is : " + email);
 
         data.signIn();
