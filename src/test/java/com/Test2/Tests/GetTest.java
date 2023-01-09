@@ -1,13 +1,14 @@
 package com.Test2.Tests;
 
-import java.util.concurrent.TimeUnit;
-
 import com.Test2.Objects.CheckoutPage;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 import com.Test2.Objects.LoginPage;
 import com.Test2.Objects.RegisterPage;
 import com.Test2.TestBase.Base;
+import io.restassured.path.json.JsonPath;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 public class GetTest extends Base {
 
@@ -16,6 +17,8 @@ public class GetTest extends Base {
     LoginPage data;
 
     CheckoutPage detail;
+
+    static JsonPath jp;
 
     @Test(enabled = true, priority = 0, description = "TEST CASE 1 | Validate that User able to generate random user.")
 
@@ -42,13 +45,15 @@ public class GetTest extends Base {
         String Connection = response.header("Connection");
         Assert.assertEquals(Connection, "keep-alive");
 
-        String firstName = response.jsonPath().getString("results[0].name.first").toString();
+        jp = new JsonPath(responseBody).setRootPath("results");
+
+        String firstName=jp.getString("name.first").replaceAll("\\[|\\]", "");
         logger.info("The First Name is : " + firstName);
 
-        String LastName = response.jsonPath().getString("results[0].name.last");
+        String LastName = jp.getString("name.last").replaceAll("\\[|\\]", "");
         logger.info("The Last Name is : " + LastName);
 
-        String email = response.jsonPath().getString("results[0].email");
+        String email = jp.getString("email").replaceAll("\\[|\\]", "");
         logger.info("The Email is : " + email);
 
         logger.info("Test case 1 Ends");

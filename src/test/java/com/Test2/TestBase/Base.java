@@ -1,6 +1,22 @@
 package com.Test2.TestBase;
 
-import static io.restassured.RestAssured.given;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.github.javafaker.Faker;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,26 +25,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import com.Test2.Utilities.RandomStringGeneration;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.github.javafaker.Faker;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
+import static io.restassured.RestAssured.given;
 
 public class Base {
 
@@ -68,6 +65,7 @@ public class Base {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.get(prop.getProperty("TestURL"));
         String title = driver.getTitle();
+        logger.info("====================FASTEN YOUR BELT AND JOIN THE RIDE========================="+"\n"+"======================================================================================================");
         if (title.equalsIgnoreCase(prop.getProperty("title"))) {
             logger.info("The Title is Correct");
             Assert.assertEquals(title, prop.getProperty("title"));
