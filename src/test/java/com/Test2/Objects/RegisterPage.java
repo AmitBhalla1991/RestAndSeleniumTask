@@ -92,7 +92,7 @@ public class RegisterPage extends Base {
 
     }
 
-    @FindBy(xpath = "(//ul[@class='header links']//span//button[@class='action switch']//span[normalize-space()='Change'])[1]")
+    @FindBy(xpath = "(//span//button[@class='action switch'])[1]")
     WebElement signOutlink;
 
     public void signOutlink() {
@@ -110,6 +110,8 @@ public class RegisterPage extends Base {
     public void signOutbutton() {
         logger.warn("User tap on signout button");
         Actions act = new Actions(driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(signOutbutton));
         act.click(signOutbutton).build().perform();
 
     }

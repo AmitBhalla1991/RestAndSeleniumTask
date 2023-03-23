@@ -58,6 +58,8 @@ public class Base {
         cap.setJavascriptEnabled(true);
         chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--incognito");
+        chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.merge(cap);
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(chromeOptions);
@@ -106,7 +108,7 @@ public class Base {
 
     public static void setup() {
 
-        RestAssured.baseURI = prop.getProperty("randomAPI");
+        RestAssured.baseURI =prop.getProperty("randomAPI");
         httpRequest = RestAssured.given();
         response = given().when().get(Resources.Resourcedata);
 
