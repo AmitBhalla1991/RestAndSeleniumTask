@@ -4,6 +4,7 @@ import com.Test2.Objects.CheckoutPage;
 import com.Test2.Objects.LoginPage;
 import com.Test2.Objects.RegisterPage;
 import com.Test2.TestBase.Base;
+import com.Test2.Utilities.Wait;
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -48,7 +49,7 @@ public class GetTest extends Base {
         jp = new JsonPath(responseBody);
         jp.setRootPath("results");
 
-        String firstName=jp.getString("name.first").replaceAll("\\[|\\]", "");
+        String firstName = jp.getString("name.first").replaceAll("\\[|\\]", "");
         logger.info("The First Name is : " + firstName);
 
         String LastName = jp.getString("name.last").replaceAll("\\[|\\]", "");
@@ -86,9 +87,10 @@ public class GetTest extends Base {
 
         logger.info("Test case 3 Starts");
 
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        Wait.waitInSeconds(60);
 
-        String firstName=jp.getString("name.first").replaceAll("\\[|\\]", "");
+
+        String firstName = jp.getString("name.first").replaceAll("\\[|\\]", "");
         logger.info("The First Name is : " + firstName);
 
         String LastName = jp.getString("name.last").replaceAll("\\[|\\]", "");
@@ -105,15 +107,9 @@ public class GetTest extends Base {
         page.setPassword(prop.getProperty("Password"));
         page.setconfirmPassword(prop.getProperty("Password"));
         page.createAccount();
-        try {
-            Thread.sleep(2000);
-            page.signOutlink();
-            page.signOutbutton();
-        } catch (Exception e) {
-
-            e.printStackTrace();
-        }
-
+        Wait.fixedWait(3000);
+        page.signOutlink();
+        page.signOutbutton();
         logger.info("Test case 3 Ends");
 
     }
@@ -122,7 +118,7 @@ public class GetTest extends Base {
 
     public void TEST_O4_Register__Duplicate_User() {
 
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        Wait.waitInSeconds(60);
 
         logger.info("Test case 4 Starts");
 
@@ -147,7 +143,7 @@ public class GetTest extends Base {
 
     public void TEST_O5_SignIn_And_Start_Shopping() {
 
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        Wait.waitInSeconds(60);
 
         logger.info("Test case 5 Starts");
 
@@ -176,7 +172,7 @@ public class GetTest extends Base {
 
     public void TEST_O6_Complete_Checkout() {
 
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        Wait.waitInSeconds(60);
 
         logger.info("Test case 6 Starts");
 
