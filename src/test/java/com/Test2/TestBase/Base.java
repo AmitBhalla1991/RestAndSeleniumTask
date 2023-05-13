@@ -1,5 +1,7 @@
 package com.Test2.TestBase;
 
+import com.Test2.Utilities.Wait;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -17,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,13 +30,17 @@ import java.util.concurrent.TimeUnit;
 
 import static io.restassured.RestAssured.given;
 
+@Listeners(com.Test2.Utilities.observation.class)
+
 public class Base {
 
     public static RequestSpecification httpRequest;
     public static Response response;
     private static com.Test2.Utilities.RandomStringGeneration RandomStringGeneration;
-    public static String generatedString = RandomStringGeneration.randomstring();
-    public static String generatedNumber = RandomStringGeneration.number();
+    public String generatedString = RandomStringGeneration.randomstring();
+    public String str = generatedString;
+    public String generatedNumber = RandomStringGeneration.number();
+    public String num = generatedNumber;
 
     public static ExtentReports extent;
     public static ExtentTest test;
@@ -42,13 +49,15 @@ public class Base {
     public static Properties prop;
 
     public static WebDriver driver;
-    public static ChromeOptions chromeOptions;
+    public ChromeOptions chromeOptions;
 
-    public static DesiredCapabilities cap;
+    public DesiredCapabilities cap;
 
     protected static Logger logger = LoggerFactory.getLogger(Base.class.getName());
 
     Faker fake = new Faker();
+
+
 
 
     @BeforeTest
@@ -64,10 +73,10 @@ public class Base {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        Wait.waitInSeconds(60);
         driver.get(prop.getProperty("TestURL"));
         String title = driver.getTitle();
-        logger.info("====================FASTEN YOUR BELT AND JOIN THE RIDE========================="+"\n"+"======================================================================================================");
+        logger.info("====================FASTEN YOUR BELT AND JOIN THE RIDE=========================" + "\n" + "======================================================================================================");
         if (title.equalsIgnoreCase(prop.getProperty("title"))) {
             logger.info("The Title is Correct");
             Assert.assertEquals(title, prop.getProperty("title"));
@@ -108,14 +117,14 @@ public class Base {
 
     public static void setup() {
 
-        RestAssured.baseURI =prop.getProperty("randomAPI");
+        RestAssured.baseURI = prop.getProperty("randomAPI");
         httpRequest = RestAssured.given();
         response = given().when().get(Resources.Resourcedata);
 
     }
 
 
-    @AfterTest(enabled=true,alwaysRun = true) // Test cleanup
+    @AfterTest(enabled = true, alwaysRun = true) // Test cleanup
     public void TeardownTest() {
 
         logger.info("Closing the Browser");
