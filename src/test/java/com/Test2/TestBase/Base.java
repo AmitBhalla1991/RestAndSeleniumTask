@@ -58,8 +58,6 @@ public class Base {
     Faker fake = new Faker();
 
 
-
-
     @BeforeTest
 
     public void initialization() {
@@ -69,6 +67,7 @@ public class Base {
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--incognito");
         chromeOptions.addArguments("--remote-allow-origins=*");
+        //chromeOptions.setHeadless(true);
         chromeOptions.merge(cap);
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(chromeOptions);
@@ -116,7 +115,6 @@ public class Base {
     @BeforeTest
 
     public static void setup() {
-
         RestAssured.baseURI = prop.getProperty("randomAPI");
         httpRequest = RestAssured.given();
         response = given().when().get(Resources.Resourcedata);

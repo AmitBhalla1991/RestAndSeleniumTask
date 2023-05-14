@@ -9,9 +9,9 @@ import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
 
 public class GetTest extends Base {
+
 
     RegisterPage page;
 
@@ -47,15 +47,14 @@ public class GetTest extends Base {
         Assert.assertEquals(Connection, "keep-alive");
 
         jp = new JsonPath(responseBody);
-        jp.setRootPath("results");
 
-        String firstName = jp.getString("name.first").replaceAll("\\[|\\]", "");
+        String firstName = jp.getString("first_name");
         logger.info("The First Name is : " + firstName);
 
-        String LastName = jp.getString("name.last").replaceAll("\\[|\\]", "");
+        String LastName = jp.getString("last_name");
         logger.info("The Last Name is : " + LastName);
 
-        String email = jp.getString("email").replaceAll("\\[|\\]", "");
+        String email = jp.getString("email");
         logger.info("The Email is : " + email);
 
         logger.info("Test case 1 Ends");
@@ -90,13 +89,13 @@ public class GetTest extends Base {
         Wait.waitInSeconds(60);
 
 
-        String firstName = jp.getString("name.first").replaceAll("\\[|\\]", "");
+        String firstName = jp.getString("first_name");
         logger.info("The First Name is : " + firstName);
 
-        String LastName = jp.getString("name.last").replaceAll("\\[|\\]", "");
+        String LastName = jp.getString("last_name");
         logger.info("The Last Name is : " + LastName);
 
-        String email = jp.getString("email").replaceAll("\\[|\\]", "");
+        String email = jp.getString("email");
         logger.info("The Email is : " + email);
 
         page = new RegisterPage(driver);
@@ -149,7 +148,7 @@ public class GetTest extends Base {
 
         data = new LoginPage(driver);
 
-        String email = jp.getString("email").replaceAll("\\[|\\]", "");
+        String email = jp.getString("email");
         logger.info("The Email is : " + email);
 
         data.signIn();
